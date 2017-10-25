@@ -32,7 +32,6 @@ module Lita
           results += commands.map { |c| [c, levenshtein_distance(reverse_command, c)] }
         end
         # Sort by lowest levenshtein
-        p results
         results = results.sort_by { |r| r[1] }.take(5)
 
         reply = <<~EOF

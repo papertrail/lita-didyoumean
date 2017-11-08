@@ -5,7 +5,7 @@ module Lita
 			on :unhandled_message, :chat
 
       def should_reply?(message)
-        message.command? || message.body =~ /#{aliases.join('|')}/i
+        message.command? || message.body =~ /^(#{aliases.join('|')})/i
       end
 
       def aliases
